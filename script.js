@@ -1,6 +1,7 @@
 const generateBtn = document.getElementById("generate-password");
 const firstPassword = document.getElementById("first-password");
 const secondPassword = document.getElementById("second-password");
+const toastContainer = document.getElementById("toast-container");
 
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
     "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
@@ -27,11 +28,18 @@ generateBtn.addEventListener("click", generatePassword);
 firstPassword.addEventListener("click", () => {
     let password = firstPassword.textContent;
     navigator.clipboard.writeText(password);
+    // console.log(password);
+    showToast();
 })
 
 secondPassword.addEventListener("click", () => {
     let password = secondPassword.textContent;
     navigator.clipboard.writeText(password);
+    // console.log(password);
+    showToast();
 })
 
-
+const showToast = () => {
+    toastContainer.style.display = "block";
+    setTimeout(function(){toastContainer.style.display = "none"}, 3000);
+}

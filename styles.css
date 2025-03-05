@@ -5,8 +5,10 @@ body {
 
 .wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     margin-top: 60px;
 }
 
@@ -70,4 +72,24 @@ h2 {
 .generated-password {
     color: #10B981;
     font-family: inter, sans-serif;
+}
+
+#toast-container {
+    display: none;
+    background-color: #273549;
+    color: #10B981;
+    font-family: inter, sans-serif;
+    padding: 10px 20px 10px 20px;
+    border-radius: 6px;
+    -webkit-animation: fadeinout 3s linear forwards;
+    animation: fadeinout 3s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+    50% {opacity: 1;}
+} 
+
+@keyframes fadeinout {
+    50% {opacity: 1;}
 }
